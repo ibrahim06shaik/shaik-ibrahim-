@@ -1,0 +1,320 @@
+/* --- Basic Reset & Fonts --- */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff8f0;
+  color: #333;
+}
+
+nav {
+  background-color: #b3402d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 1.4rem;
+  cursor: default;
+}
+.logo-img {
+  height: 40px;
+  border-radius: 6px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.nav-links li a:hover {
+  color: #ffd7b5;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 70vh;
+  background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  overflow: hidden;
+}
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(179, 64, 45, 0.75);
+  z-index: 1;
+}
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 2;
+}
+
+/* Animate Hero Heading */
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.3rem;
+  animation: slideInDown 1s ease forwards;
+}
+.hero p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  animation: slideInDown 1.5s ease forwards;
+}
+
+/* About Us */
+.about {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.about h2 {
+  color: #b3402d;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Menu Section */
+.menu {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.menu h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: #b3402d;
+  letter-spacing: 1.2px;
+}
+.menu-filters {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.menu-filters button {
+  background: #b3402d;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin: 0 8px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.menu-filters button:hover,
+.menu-filters button.active {
+  background-color: #802619;
+}
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+.menu-item {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(179, 64, 45, 0.15);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s forwards;
+}
+.menu-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.menu-item:hover img {
+  transform: scale(1.05);
+}
+.menu-item h3 {
+  margin: 12px 15px 5px;
+  color: #b3402d;
+}
+.menu-item .price {
+  margin-left: 15px;
+  font-weight: 700;
+  color: #802619;
+}
+.menu-item p {
+  margin: 5px 15px 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Fade Up Animation */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animate menu items sequentially */
+.menu-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.menu-item:nth-child(2) {
+  animation-delay: 0.25s;
+}
+.menu-item:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.menu-item:nth-child(4) {
+  animation-delay: 0.55s;
+}
+.menu-item:nth-child(5) {
+  animation-delay: 0.7s;
+}
+.menu-item:nth-child(6) {
+  animation-delay: 0.85s;
+}
+.menu-item:nth-child(7) {
+  animation-delay: 1s;
+}
+.menu-item:nth-child(8) {
+  animation-delay: 1.15s;
+}
+.menu-item:nth-child(9) {
+  animation-delay: 1.3s;
+}
+.menu-item:nth-child(10) {
+  animation-delay: 1.45s;
+}
+.menu-item:nth-child(11) {
+  animation-delay: 1.6s;
+}
+.menu-item:nth-child(12) {
+  animation-delay: 1.75s;
+}
+
+.reservation {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: #f9f4f1;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.reservation h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #b3402d;
+}
+
+#reservation-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+/* For two-column rows */
+.form-row:nth-child(-n+3) {
+  justify-content: space-between;
+}
+
+.form-row:nth-child(-n+3) > input {
+  flex: 1;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.form-row:nth-child(-n+3) > input:focus {
+  border-color: #b3402d;
+  outline: none;
+}
+
+/* Full width for select and button */
+.form-row:nth-child(4), .form-row:nth-child(5) {
+  flex-direction: column;
+  width: 100%;
+}
+
+select#meal-type {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+select#meal-type:focus {
+  border-color: #b3402d;
+  outline: none;
+}
+
+button[type="submit"] {
+  background-color: #b3402d;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+  background-color: #8a2a1b;
+  outline: none;
+}
+
+/* Confirmation message styling */
+#confirmation-message {
+  margin-top: 20px;
+  text-align: center;
+  color: green;
+  font-weight: 600;
+}
